@@ -34,5 +34,5 @@ The app is designed for the display, not ported to it: one idea per screen, larg
 ## Links
 
 - Public repo: https://github.com/maungzy86/cryptoglance-even-realities
-- Demo video (≤3 min, simulator): *(add link after recording — see DEMO-SCRIPT.md)*
+- Demo video (2:28, narrated, captioned): https://github.com/maungzy86/cryptoglance-even-realities/blob/main/demo.mp4
 - Packaged build: `cryptoglance.ehpk` (via `npm run pack`)
