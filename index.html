@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoGlance — G2 Crypto Companion</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; padding: 24px 16px 40px;
+        background: #101410; color: #cfe8cf;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        display: flex; flex-direction: column; align-items: center; gap: 14px;
+      }
+      h1 { font-size: 18px; margin: 0; font-weight: 600; letter-spacing: 0.04em; }
+      .sub { font-size: 12px; color: #7fa87f; margin: -8px 0 4px; text-align: center; }
+      /* The glasses preview is exactly one G2 eye display: 576x288, green mono. */
+      #glasses {
+        width: 576px; max-width: 96vw; aspect-ratio: 576 / 288;
+        background: #02140a; border: 2px solid #1d5c33; border-radius: 10px;
+        color: #4dff88; position: relative; overflow: hidden;
+        padding: 6px 10px; display: flex; flex-direction: column;
+        text-shadow: 0 0 6px rgba(77, 255, 136, 0.45);
+      }
+      #pv-header { font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; }
+      #pv-body { font-size: 17px; line-height: 1.45; white-space: pre-line; margin-top: 6px; }
+      #pv-list { margin-top: auto; display: flex; flex-direction: column; gap: 2px; }
+      .pv-item { font-size: 18px; padding: 1px 6px; white-space: nowrap; overflow: hidden; }
+      .pv-item.sel { background: #4dff88; color: #02140a; text-shadow: none; font-weight: 700; }
+      #pv-footer { font-size: 13px; color: #2fae5f; margin-top: 4px; white-space: nowrap; overflow: hidden; }
+      .controls { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+      button {
+        background: #17351f; color: #b9f4c9; border: 1px solid #2d7a44;
+        border-radius: 6px; padding: 7px 14px; font: inherit; font-size: 13px; cursor: pointer;
+      }
+      button:hover { background: #1f4a2b; }
+      #status { font-size: 12px; color: #7fa87f; text-align: center; max-width: 640px; line-height: 1.6; }
+      .note { font-size: 12px; color: #5d7d5d; max-width: 640px; text-align: center; line-height: 1.6; }
+    </style>
+  </head>
+  <body>
+    <h1>CryptoGlance</h1>
+    <p class="sub">Glanceable crypto prices, alerts &amp; paper trading for Even Realities G2</p>
+
+    <div id="glasses" aria-label="G2 display preview (576x288)">
+      <div id="pv-header">CryptoGlance</div>
+      <div id="pv-body">Loading prices…</div>
+      <div id="pv-list"></div>
+      <div id="pv-footer"></div>
+    </div>
+
+    <div class="controls">
+      <button data-act="up">▲ Up</button>
+      <button data-act="down">▼ Down</button>
+      <button data-act="click">● Select</button>
+      <span id="menu-buttons" style="display: contents"></span>
+    </div>
+
+    <div id="status">Starting…</div>
+    <p class="note">
+      This page is the app's WebView UI. On the glasses (or in the Even Hub simulator) the same
+      screens are rendered on the G2 display through the Even Hub SDK. In a plain browser you get
+      this 576×288 preview plus the buttons above (or arrow keys + Enter). Paper trading only —
+      fake money, no real funds, not financial advice.
+    </p>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
